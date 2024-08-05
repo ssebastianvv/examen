@@ -1,4 +1,4 @@
-import { PageController } from './controllers/page.login.controllers';  
+import { PageController } from './controllers/page.login.controllers.ts';  
 
 const url = 'https://api-posts.codificando.xyz/';//URL de la API  
 
@@ -27,8 +27,8 @@ loginForm.addEventListener("submit", async (event : Event) => {
 
   const getToken = sessionStorage.getItem('token');
 
-  if (getToken === token.token && getToken !== null) {//Si el token es igual al que obtuvimos y no es null  
-    window.location.href = '.views/home.html';//Ir a la página de inicio
+  if (getToken ) {//Si el token es igual al que obtuvimos y no es null  
+    window.location.href = './views/home.html';//Ir a la página de inicio
     alert('se inició sesión');//Mostramos un mensaje de alerta  
     
   }

@@ -1,6 +1,6 @@
 import { IPost, IpostResponse } from "../models/Ipost";
 
-export class postCrud {
+export class PostCrud {
 
     async create (url : string, city : IPost, ) : Promise<void> {
 

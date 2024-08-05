@@ -3,27 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/login-register.css">
+    <link rel="stylesheet" href="../style.css">
     <title>login</title>
   </head>
   <body>
     <nav>
-        <ul>
-          <li><a href="/src/views/login.html">login</a></li>
-          <li><a href="/src/views/register.html">registro</a></li>
-          <li><a href="../../index.html">inicio</a></li>
-        </ul>
-      </nav>
+      <div id="nav-title">
+          <h1><a href="../../public/index.html">inicio</a></h1>
+      </div>
+      <div id="nav-options">
+          <ul>
+             <li><a href="../views/register.html">sing up</a></li>
+          </ul>
+      </div>
+  </nav>
       <main>
-        <form id="loginForm">
-          <input type="email" id="emailUser" placeholder="email">
-          <input type="password" id="passwordUser" placeholder="contraseña">
-          <button type="submit">enviar</button>
-        </form>
+        <h3>Log In</h3>
+        <div id="form-container">
+          <form id="loginForm">
+            <input type="email" id="emailUser" placeholder="email">
+            <input type="password" id="passwordUser" placeholder="contraseña">
+            <button type="submit">enviar</button>
+          </form>
+        </div>
         <div id="loading" style="display: none;">
           <img src="https://cdn.pixabay.com/animation/2023/11/14/18/27/18-27-25-79_512.gif" alt="Cargando...">
         </div>
       </main>
-      <script type="module" src="/src/main.ts"></script>
+      <script type="module" src="/examen/src/main.ts"></script>
   </body>
 </html>
