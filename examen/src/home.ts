@@ -11,7 +11,7 @@ const image = document.querySelector("#image") as HTMLInputElement;
 const cardsContainer = document.querySelector("#cards-container") as HTMLDivElement;
 const postId = document.querySelector("#post-id") as HTMLInputElement; 
 
-const url : string = 'http://localhost:3000/posts';//cambiar ahora
+const url : string = 'https://api-posts.codificando.xyz/posts';//cambiar ahora
 
 Form.addEventListener('submit', async (event : Event) => {
 
@@ -51,17 +51,17 @@ const createpost = async () : Promise<void> => {
 
 const getpost = async () : Promise<void> => {
 
-    const getCities = new PostCrud;
-    const cities : IpostResponse[] = await getCities.get(url);
+    const postCities = new PostCrud;
+    const cities : IpostResponse[] = await postCities.get(url);
     
 
     console.log(cities);
 
     cardsContainer.innerHTML = '';
 
-    cities.forEach(city => {
-        const renderCity = printpost(city);
-        cardsContainer.appendChild(renderCity);
+    cities.forEach(post => {
+        const renderpost = printpost(post);
+        cardsContainer.appendChild(renderpost);
     })
 }
 
