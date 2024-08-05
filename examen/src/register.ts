@@ -1,10 +1,10 @@
-import { UserRegister, UserVerifcations } from "../src/controllers/page.register.controller.js";
-import { IUserRegister, IUserVerification } from "../src/models/Iregister.js";
+import { UserRegister, UserVerifcations } from "../src/controllers/page.register.controller.ts";
+import { IUserRegister, IUserVerification } from "../src/models/Iregister.ts";
 
 const formRegister = document.querySelector("#register-form") as HTMLFormElement;
 const userName = document.querySelector("#name") as HTMLInputElement;
 const userEmail = document.querySelector("#email") as HTMLInputElement;
-const userPassword = document.querySelector("#passwordUser") as HTMLInputElement;
+const userPassword = document.querySelector("#password") as HTMLInputElement;
 const userPasswordConfirmation = document.querySelector("#password-confirmation") as HTMLInputElement;
 
 const url : string = 'https://api-posts.codificando.xyz/users/register';

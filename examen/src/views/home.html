@@ -9,9 +9,7 @@
 </head>
 <body>
     <nav>
-        <div id="nav-title">
-            <h1><a href="../views/home.html">Colombian Cities</a></h1>
-        </div>
+        
         <div id="nav-options">
             <ul>
                <li><button id="logout-button">log out</button></li>
@@ -19,21 +17,21 @@
         </div>
     </nav>
     <main>
-        <h3>Create a New City Card</h3>
+        <h3> Create a New Post </h3>
         <div id="form-container">
-            <form id="city-form">
-                <input type="hidden" id="city-id">
-                <input type="text" id="city-name" placeholder="name">
-                <input type="text" id="city-department" placeholder="department">
-                <input type="text" id="city-description" placeholder="description">
-                <input type="url" id="city-image" placeholder="image url">
+            <form id="post-form">
+                <input type="hidden" id="post-id">
+                <input type="text" id="post-title" placeholder="Titulo">
+                <input type="text" id="plataforma" placeholder="plataforma">
+                <input type="text" id="fecha" placeholder="fecha">
+                <input type="url" id="image" placeholder="image url">
                 <button type="submit">send</button>
             </form>
         </div>
         <div id="cards-container"></div>
     </main>
     
-    <script type="module" src="../../dist/ts/logout.js"></script>
-    <script type="module" src="../../dist/ts/home.js"></script>
+    <script type="module" src="../controllers/logaut.ts"></script>
+    <script type="module" src="../home.ts"></script>
 </body>
 </html>

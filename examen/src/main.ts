@@ -1,4 +1,4 @@
-import { PageController } from './controllers/page.login.controllers';  
+import { PageController } from './controllers/page.login.controllers.ts';  
 
 const url = 'https://api-posts.codificando.xyz/';//URL de la API  
 
