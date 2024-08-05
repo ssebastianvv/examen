@@ -23,13 +23,14 @@ loginForm.addEventListener("submit", async (event : Event) => {
 
   console.log(token);
 
-  sessionStorage.setItem('token', token.token);
+  sessionStorage.setItem('token', token.token);//Guardamos el token en el localStorage
 
   const getToken = sessionStorage.getItem('token');
 
-  if (getToken === token.token) {
-    window.location.href = './pages/home.html';
-    alert('se inició sesión');
+  if (getToken === token.token && getToken !== null) {//Si el token es igual al que obtuvimos y no es null  
+    window.location.href = '.views/home.html';//Ir a la página de inicio
+    alert('se inició sesión');//Mostramos un mensaje de alerta  
+    
   }
  }
  catch (error) {

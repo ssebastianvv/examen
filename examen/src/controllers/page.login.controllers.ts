@@ -26,7 +26,7 @@ export class PageController {
 
         //Manejo de errores 
         //Si la respuesta es diferente de 200, arrojamos el error
-        if (response.status != 200) {
+        if (response.status != 201) {
             throw new Error('no se pudo iniciar sesión');
         }
 
