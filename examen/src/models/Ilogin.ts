@@ -4,5 +4,5 @@ export interface ILogin {
 }
 
 export interface IResponseLogin {
-    token : string 
+    token : string    
 }

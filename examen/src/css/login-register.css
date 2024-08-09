@@ -1,1 +1,126 @@
 
+/* src/style.css */
+
+/* Reset básico para márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo general del cuerpo */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f0f4f8;
+    color: #333;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para la navegación */
+  nav {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #nav-title h1 {
+    font-size: 1.5rem;
+    color: #4a90e2;
+  }
+  
+  #nav-title h1 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+  
+  #nav-title h1 a:hover {
+    color: #357abd;
+  }
+  
+  #nav-options ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  #nav-options ul li a {
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  #nav-options ul li a:hover {
+    color: #357abd;
+  }
+  
+  /* Estilo para el contenedor principal del formulario */
+  main {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Estilo para el título del formulario */
+  h3 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  /* Estilo para el contenedor del formulario */
+  #form-container {
+    margin-top: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #357abd;
+  }
+  
+  /* Estilo para el contenedor de carga */
+  #loading {
+    margin-top: 20px;
+  }
+  
+  #loading img {
+    width: 50px;
+    height: 50px;
+  }
+  

@@ -1,40 +1,51 @@
-import { PageController } from './controllers/page.login.controllers.ts';  
+// Importar el controlador de página
+import { PageController } from './controllers/page.login.controllers';
 
-const url = 'https://api-posts.codificando.xyz/';//URL de la API  
+// URL base de la API
+const url = 'https://api-posts.codificando.xyz/';
 
-const loginForm = document.querySelector("#loginForm") as HTMLFormElement;
-const emailUser = document.querySelector("#emailUser") as HTMLInputElement;
-const passwordUser = document.querySelector("#passwordUser") as HTMLInputElement;
-const loading =document.querySelector("#loading") as HTMLDivElement
+// Seleccionar elementos del DOM y asegurarse de que existan
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.querySelector("#loginForm")         as HTMLFormElement;
+    const emailUser = document.querySelector("#emailUser")         as HTMLInputElement;
+    const passwordUser = document.querySelector("#passwordUser")   as HTMLInputElement;
+    const loading = document.querySelector("#loading")             as HTMLDivElement;
 
-loginForm.addEventListener("submit", async (event : Event) => {
-  event.preventDefault();
+    // Verificar si los elementos fueron seleccionados correctamente
+    if (!loginForm || !emailUser || !passwordUser || !loading) {
+        console.error("Error al seleccionar los elementos del formulario.");
+        return;
+    }
 
-  loading.style.display = "flex";
+    // Asignar el event listener al formulario
+    loginForm.addEventListener("submit", async (event: Event) => {
+        event.preventDefault();
+        loading.style.display = "flex";
 
-  const user = {
-    email : emailUser.value,
-    password : passwordUser.value
-  }
+        const user = {
+            email: emailUser.value,
+            password: passwordUser.value
+        };
 
- try{
-  const pageControoller = new PageController(url);
-  const token = await pageControoller.login(user, 'auth/login');// tener en cuenta que aca es la continuacion de la funcion login
+        try {
+            const pageController = new PageController(url);
+            const token = await pageController.login(user, 'auth/login');
 
-  console.log(token);
+            console.log(token);
 
-  sessionStorage.setItem('token', token.token);//Guardamos el token en el localStorage
+            sessionStorage.setItem('token', token.token);
 
-  const getToken = sessionStorage.getItem('token');
+            const getToken = sessionStorage.getItem('token');
 
-  if (getToken ) {//Si el token es igual al que obtuvimos y no es null  
-    window.location.href = './views/home.html';//Ir a la página de inicio
-    alert('se inició sesión');//Mostramos un mensaje de alerta  
-    
-  }
- }
- catch (error) {
-  alert(error);
- }
-
-})
+            if (getToken) {
+                alert('Se inició sesión con éxito');
+                window.location.href = '/src/views/home.html';
+            }
+        } catch (error) {
+            console.error('Error al iniciar sesión:', error);
+            alert('Hubo un error al iniciar sesión. Por favor, intenta nuevamente.');
+        } finally {
+            loading.style.display = "none";
+        }
+    });
+});

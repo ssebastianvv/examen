@@ -51,21 +51,21 @@ const createpost = async () : Promise<void> => {
 
 const getpost = async () : Promise<void> => {
 
-    const postCities = new PostCrud;
-    const cities : IpostResponse[] = await postCities.get(url);
+    const post = new PostCrud;
+    const mensage : IpostResponse[] = await post.get(url);
     
 
-    console.log(cities);
+    console.log(mensage);
 
     cardsContainer.innerHTML = '';
 
-    cities.forEach(post => {
+    mensage.forEach(post => {
         const renderpost = printpost(post);
         cardsContainer.appendChild(renderpost);
     })
 }
 
-const editCity = async (id : string) : Promise<void> => { 
+const editpost = async (id : string) : Promise<void> => { 
 
     window.location.href = '#nav-title';
 
@@ -96,7 +96,7 @@ const updatepost = async (id : string) : Promise<void> => {
 
 const deleteCity = async (id : string) : Promise<void> => {
 
-    const confirmation = confirm('¿Deseas eliminar esta ciudad?');
+    const confirmation = confirm('¿Deseas eliminar este post?');
 
     if (confirmation) {
 
@@ -113,7 +113,7 @@ const buttonClick = async (event : Event) : Promise<void> => {
         const id = target.getAttribute('data-id');
 
         if (id !== null) {
-            editCity(id);
+            editpost(id);
             return; 
         }
     }

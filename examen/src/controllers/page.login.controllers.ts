@@ -15,13 +15,13 @@ export class PageController {
 
     //Método asíncrónico para el inicio de sesión
     //Recibe los datos de inicio de sesión (data) y el endpoint
-    async login(data : ILogin, endPoint : string) : Promise<IResponseLogin> { 
+    async login(user : ILogin, endPoint : string) : Promise<IResponseLogin> { 
         const response = await fetch(`${this.url}${endPoint}`, {
             method : 'POST',
             headers : {
-                'Content-Type' : 'Application/json'
+                'Content-Type': 'application/json'
             },
-            body : JSON.stringify(data) //Acá convertimos el objeto data a JSON
+            body : JSON.stringify(user) //Acá convertimos el objeto data a JSON
         });
 
         //Manejo de errores 
@@ -31,7 +31,7 @@ export class PageController {
         }
 
         // Convertimos la respuesta en formato JSON a un objeto IResponseLogin
-        const token : IResponseLogin = await response.json();
-        return token;
+        const data  = await response.json();
+        return data;
     }
 }
